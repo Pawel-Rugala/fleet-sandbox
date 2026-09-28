@@ -17,4 +17,9 @@ if [ "$actual" != "$expected" ]; then
     exit 1
 fi
 
+if ! grep -qxF 'head check' SMOKE.md; then
+    printf 'SMOKE.md missing exact line "head check"\n' >&2
+    exit 1
+fi
+
 exit 0
